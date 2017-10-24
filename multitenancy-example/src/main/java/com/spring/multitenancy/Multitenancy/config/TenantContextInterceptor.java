@@ -1,6 +1,8 @@
 package com.spring.multitenancy.Multitenancy.config;
 
+import com.spring.multitenancy.Multitenancy.exception.ApplicationException;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
