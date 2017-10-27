@@ -1,0 +1,115 @@
+{
+	"id": "c9ecf3cc-89c2-7f2b-35d7-efbd9ab3a338",
+	"name": "OAuth2_Auth_Server",
+	"description": "",
+	"order": [
+		"7dd48851-cb43-a1a8-cb83-334b98b689da",
+		"e6cde07a-50b3-1e76-efc6-36e5d50391f2"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1508935494579,
+	"owner": "938836",
+	"public": false,
+	"requests": [
+		{
+			"id": "7dd48851-cb43-a1a8-cb83-334b98b689da",
+			"headers": "Authorization: Basic Q0xJRU5UXzE6Y2xpZW50XzFfc2VjcmV0\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic Q0xJRU5UXzE6Y2xpZW50XzFfc2VjcmV0",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9001/oauthserver/oauth/token?username=dwaylon&password=dwaylon@123&grant_type=password",
+			"queryParams": [
+				{
+					"key": "username",
+					"value": "dwaylon",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "dwaylon@123",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509089185878,
+			"name": "OAuth2 Authentication",
+			"description": "",
+			"collectionId": "c9ecf3cc-89c2-7f2b-35d7-efbd9ab3a338",
+			"responses": []
+		},
+		{
+			"id": "e6cde07a-50b3-1e76-efc6-36e5d50391f2",
+			"headers": "Authorization: Basic Q0xJRU5UXzE6Y2xpZW50XzFfc2VjcmV0\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic Q0xJRU5UXzE6Y2xpZW50XzFfc2VjcmV0",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://localhost:9001/oauthserver/oauth/token?grant_type=refresh_token&refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkd2F5bG9uIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImF0aSI6Ijg5ZmUyOWI4LTZmN2EtNGEyOC1iZWI1LWZlOTQ5MjgzZWQ4OSIsImV4cCI6MTUxMTY4MTA2NCwiYXV0aG9yaXRpZXMiOlsiVVNFUiIsIkFETUlOIiwiTUVNQkVSIl0sImp0aSI6ImQ0ZDA4ZWYyLWU2ZGQtNGY4Ny1hN2E3LWU5MzYwYWFlMGMzZSIsImNsaWVudF9pZCI6IkNMSUVOVF8xIn0.M1_gFa-lrQQmgeaD4z7G4rR9rQNmpiUwQlJGe6-vNSI",
+			"queryParams": [
+				{
+					"key": "grant_type",
+					"value": "refresh_token",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "refresh_token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkd2F5bG9uIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImF0aSI6Ijg5ZmUyOWI4LTZmN2EtNGEyOC1iZWI1LWZlOTQ5MjgzZWQ4OSIsImV4cCI6MTUxMTY4MTA2NCwiYXV0aG9yaXRpZXMiOlsiVVNFUiIsIkFETUlOIiwiTUVNQkVSIl0sImp0aSI6ImQ0ZDA4ZWYyLWU2ZGQtNGY4Ny1hN2E3LWU5MzYwYWFlMGMzZSIsImNsaWVudF9pZCI6IkNMSUVOVF8xIn0.M1_gFa-lrQQmgeaD4z7G4rR9rQNmpiUwQlJGe6-vNSI",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509089181751,
+			"name": "Access Token From Request Token",
+			"description": "",
+			"collectionId": "c9ecf3cc-89c2-7f2b-35d7-efbd9ab3a338",
+			"responses": []
+		}
+	]
+}
