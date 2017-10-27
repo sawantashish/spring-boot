@@ -1,0 +1,79 @@
+CREATE TABLE `user` (
+  `USER_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USERNAME` varchar(50) NOT NULL,
+  `PASSWORD` varchar(100) NOT NULL,
+  `FIRST_NAME` varchar(30) NOT NULL,
+  `MIDDLE_NAME` varchar(30) DEFAULT NULL,
+  `LAST_NAME` varchar(30) NOT NULL,
+  `EMAIL_ID` varchar(50) NOT NULL,
+  `PHONE` bigint(20) DEFAULT NULL,
+  `ADDRESS` varchar(100) NOT NULL,
+  `CITY` varchar(30) NOT NULL,
+  `ZIP` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`USER_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `user`
+(
+`USERNAME`,
+`PASSWORD`,
+`FIRST_NAME`,
+`MIDDLE_NAME`,
+`LAST_NAME`,
+`EMAIL_ID`,
+`PHONE`,
+`ADDRESS`,
+`CITY`,
+`ZIP`
+)
+VALUES
+(
+"dwaylon",
+"dwaylon@123",
+"Waylon",
+"W",
+"Dalton",
+"Waylon.Dalton@hotmail.com",
+12876783755,
+"Park Street, Grand Cameroon Road",
+"New York",
+"Z236TR"
+);
+
+
+CREATE TABLE `role` (
+  `ROLE_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ROLE_NAME` varchar(30) NOT NULL,
+  PRIMARY KEY (`ROLE_ID`),
+  UNIQUE KEY `ROLE_NAME_UNIQUE` (`ROLE_NAME`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+SELECT * FROM .role;
+
+
+
+INSERT INTO `role`(`ROLE_NAME`) VALUES ("ADMIN");
+INSERT INTO `role`(`ROLE_NAME`) VALUES ("MEMBER");
+INSERT INTO `role`(`ROLE_NAME`) VALUES ("USER");
+
+
+CREATE TABLE `user_role_xref` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USER_ID` int(11) NOT NULL,
+  `ROLE_ID` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `USER_ROLES_UK` (`USER_ID`,`ROLE_ID`),
+  KEY `USER_ID` (`USER_ID`),
+  KEY `ROLE_ID` (`ROLE_ID`),
+  CONSTRAINT `user_role_xref_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `user` (`USER_ID`),
+  CONSTRAINT `user_role_xref_ibfk_2` FOREIGN KEY (`ROLE_ID`) REFERENCES `role` (`ROLE_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+SELECT * FROM user_role_xref;
+
+
+INSERT INTO `user_role_xref` (`USER_ID`, `ROLE_ID`) VALUES ('1', '1');
+INSERT INTO `user_role_xref` (`USER_ID`, `ROLE_ID`) VALUES ('1', '2');
+INSERT INTO `user_role_xref` (`USER_ID`, `ROLE_ID`) VALUES ('1', '3');
+
+
+
