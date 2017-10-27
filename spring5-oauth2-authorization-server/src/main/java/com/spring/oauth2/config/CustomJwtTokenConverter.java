@@ -1,5 +1,6 @@
 package com.spring.oauth2.config;
 
+import com.spring.oauth2.entity.CustomUserDetails;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.security.jwt.Jwt;
@@ -36,7 +37,8 @@ public class CustomJwtTokenConverter extends JwtAccessTokenConverter {
         String content;
         try {
             Map<String, Object> response = (Map<String, Object>) getAccessTokenConverter().convertAccessToken(accessToken, authentication);
-            //response.put("userId", "12345");
+            CustomUserDetails details = (CustomUserDetails) authentication.getPrincipal();
+            response.put("userId",details.getUserId());
             content = objectMapper.formatMap(response);
         } catch (Exception e) {
             e.printStackTrace();

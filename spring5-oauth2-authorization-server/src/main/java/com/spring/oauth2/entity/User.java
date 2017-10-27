@@ -9,6 +9,16 @@ import java.util.Set;
 @Table(name = "user")
 public class User implements Serializable {
 
+    public User() {
+    }
+
+    public User(User user){
+        this.userId = user.getUserId();
+        this.username = user.getUsername();
+        this.password = user.getPassword();
+        this.userRoles = user.getUserRoles();
+    }
+
     private Integer userId;
     private String username;
     private String password;

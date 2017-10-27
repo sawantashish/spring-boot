@@ -1,5 +1,6 @@
 package com.spring.oauth2.service;
 
+import com.spring.oauth2.entity.CustomUserDetails;
 import com.spring.oauth2.entity.User;
 import com.spring.oauth2.entity.UserRole;
 import com.spring.oauth2.repository.UserRepository;
@@ -40,6 +41,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             grantedAuthorities.add(grantedAuthority);
         }
 
-        return new org.springframework.security.core.userdetails.User(userFromDatabase.getUsername(), userFromDatabase.getPassword(), grantedAuthorities);
+        return new CustomUserDetails(userFromDatabase);
     }
 }
