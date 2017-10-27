@@ -1,4 +1,4 @@
-package com.spring.oauth2;
+package com.spring.oauth2.service;
 
 import com.spring.oauth2.entity.User;
 import com.spring.oauth2.entity.UserRole;
@@ -28,30 +28,18 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         String lowercaseLogin = login.toLowerCase();
 
         User userFromDatabase;
-        /*if(lowercaseLogin.contains("@")) {
-            //userFromDatabase = userRepository.findByEmail(lowercaseLogin);
-        } else {*/
             userFromDatabase = userRepository.findByUsernameCaseInsensitive(lowercaseLogin);
-//        /}
 
         if (userFromDatabase == null) {
-            throw new UsernameNotFoundException("User_old " + lowercaseLogin + " was not found in the database");
-        } /*else if (!userFromDatabase.isActivated()) {
-            throw new RuntimeException("User_old " + lowercaseLogin + " is not activated");
-        }*/
+            throw new UsernameNotFoundException("User " + lowercaseLogin + " was not found in the database");
+        }
 
         Collection<GrantedAuthority> grantedAuthorities = new ArrayList<>();
-        /*for (Authority authority : userFromDatabase.getAuthorities()) {
-            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(authority.getName());
-            grantedAuthorities.add(grantedAuthority);
-        }*/
-
         for (UserRole userRole : userFromDatabase.getUserRoles()) {
             GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(userRole.getRole().getRoleName());
             grantedAuthorities.add(grantedAuthority);
         }
 
         return new org.springframework.security.core.userdetails.User(userFromDatabase.getUsername(), userFromDatabase.getPassword(), grantedAuthorities);
-
     }
 }
