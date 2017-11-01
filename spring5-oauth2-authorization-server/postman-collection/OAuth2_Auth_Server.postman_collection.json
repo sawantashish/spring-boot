@@ -23,8 +23,15 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:9001/oauthserver/oauth/token?username=dwaylon&password=dwaylon@123&grant_type=password",
+			"url": "http://localhost:9001/oauth-authorization-server/oauth/token?grant_type=password&username=dwaylon&password=dwaylon@123",
 			"queryParams": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
 				{
 					"key": "username",
 					"value": "dwaylon",
@@ -35,13 +42,6 @@
 				{
 					"key": "password",
 					"value": "dwaylon@123",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "grant_type",
-					"value": "password",
 					"equals": true,
 					"description": "",
 					"enabled": true
@@ -56,7 +56,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1509089185878,
+			"time": 1509528789369,
 			"name": "OAuth2 Authentication",
 			"description": "",
 			"collectionId": "c9ecf3cc-89c2-7f2b-35d7-efbd9ab3a338",
@@ -71,15 +71,9 @@
 					"value": "Basic Q0xJRU5UXzE6Y2xpZW50XzFfc2VjcmV0",
 					"description": "",
 					"enabled": true
-				},
-				{
-					"key": "",
-					"value": "",
-					"description": "",
-					"enabled": false
 				}
 			],
-			"url": "http://localhost:9001/oauthserver/oauth/token?grant_type=refresh_token&refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkd2F5bG9uIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImF0aSI6Ijg5ZmUyOWI4LTZmN2EtNGEyOC1iZWI1LWZlOTQ5MjgzZWQ4OSIsImV4cCI6MTUxMTY4MTA2NCwiYXV0aG9yaXRpZXMiOlsiVVNFUiIsIkFETUlOIiwiTUVNQkVSIl0sImp0aSI6ImQ0ZDA4ZWYyLWU2ZGQtNGY4Ny1hN2E3LWU5MzYwYWFlMGMzZSIsImNsaWVudF9pZCI6IkNMSUVOVF8xIn0.M1_gFa-lrQQmgeaD4z7G4rR9rQNmpiUwQlJGe6-vNSI",
+			"url": "http://localhost:9001/oauthserver/oauth/token?grant_type=refresh_token&refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkd2F5bG9uIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImF0aSI6IjhmMjQ0ZGY3LTRkZWMtNDMyNC1iOTcwLTcyMjNlZmVhZTQxYyIsImV4cCI6MTUxMjExMDkyMCwidXNlcklkIjoxLCJhdXRob3JpdGllcyI6WyJST0xFX01FTUJFUiIsIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXSwianRpIjoiYTA1ZGU4MmYtY2ZmZi00MzdjLWFkNTYtMThmYjE3OTMzMWE3IiwiY2xpZW50X2lkIjoiQ0xJRU5UXzEiLCJ1c2VybmFtZSI6ImR3YXlsb24ifQ.kzeje-J0VV3WP8ljrer9whsS7RHqN3JW0toNmkG-jVM",
 			"queryParams": [
 				{
 					"key": "grant_type",
@@ -90,7 +84,7 @@
 				},
 				{
 					"key": "refresh_token",
-					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkd2F5bG9uIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImF0aSI6Ijg5ZmUyOWI4LTZmN2EtNGEyOC1iZWI1LWZlOTQ5MjgzZWQ4OSIsImV4cCI6MTUxMTY4MTA2NCwiYXV0aG9yaXRpZXMiOlsiVVNFUiIsIkFETUlOIiwiTUVNQkVSIl0sImp0aSI6ImQ0ZDA4ZWYyLWU2ZGQtNGY4Ny1hN2E3LWU5MzYwYWFlMGMzZSIsImNsaWVudF9pZCI6IkNMSUVOVF8xIn0.M1_gFa-lrQQmgeaD4z7G4rR9rQNmpiUwQlJGe6-vNSI",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkd2F5bG9uIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImF0aSI6IjhmMjQ0ZGY3LTRkZWMtNDMyNC1iOTcwLTcyMjNlZmVhZTQxYyIsImV4cCI6MTUxMjExMDkyMCwidXNlcklkIjoxLCJhdXRob3JpdGllcyI6WyJST0xFX01FTUJFUiIsIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXSwianRpIjoiYTA1ZGU4MmYtY2ZmZi00MzdjLWFkNTYtMThmYjE3OTMzMWE3IiwiY2xpZW50X2lkIjoiQ0xJRU5UXzEiLCJ1c2VybmFtZSI6ImR3YXlsb24ifQ.kzeje-J0VV3WP8ljrer9whsS7RHqN3JW0toNmkG-jVM",
 					"equals": true,
 					"description": "",
 					"enabled": true
@@ -105,7 +99,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1509089181751,
+			"time": 1509528784984,
 			"name": "Access Token From Request Token",
 			"description": "",
 			"collectionId": "c9ecf3cc-89c2-7f2b-35d7-efbd9ab3a338",

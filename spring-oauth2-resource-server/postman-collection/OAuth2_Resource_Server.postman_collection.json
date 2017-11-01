@@ -1,0 +1,68 @@
+{
+	"id": "974f8678-2e1a-6e20-9a00-f0ed15cb2cf3",
+	"name": "OAuth2_Resource_Server",
+	"description": "",
+	"order": [
+		"70d806c0-e390-5d7d-c982-ccdecddf8e90",
+		"57361ff0-e0aa-f957-96ac-daa33dcab7d8"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1509528161059,
+	"owner": "938836",
+	"public": false,
+	"requests": [
+		{
+			"id": "57361ff0-e0aa-f957-96ac-daa33dcab7d8",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkd2F5bG9uIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTUwOTcwNzUzNiwidXNlcklkIjoxLCJhdXRob3JpdGllcyI6WyJST0xFX01FTUJFUiIsIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiNjBkMDI3YmMtMWYxZi00N2FiLTgxMmYtMzM4Mzg2YjYxZjk5IiwiY2xpZW50X2lkIjoiQ0xJRU5UXzEiLCJ1c2VybmFtZSI6ImR3YXlsb24ifQ.pEzceVYs7YM3goWVhCX2PuHBaeBGpFmc3tq2o_GxkvI\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkd2F5bG9uIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTUwOTcwNzUzNiwidXNlcklkIjoxLCJhdXRob3JpdGllcyI6WyJST0xFX01FTUJFUiIsIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiNjBkMDI3YmMtMWYxZi00N2FiLTgxMmYtMzM4Mzg2YjYxZjk5IiwiY2xpZW50X2lkIjoiQ0xJRU5UXzEiLCJ1c2VybmFtZSI6ImR3YXlsb24ifQ.pEzceVYs7YM3goWVhCX2PuHBaeBGpFmc3tq2o_GxkvI",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9002/oauth-resource-server/api/private",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "974f8678-2e1a-6e20-9a00-f0ed15cb2cf3",
+			"data": null,
+			"dataMode": "params",
+			"name": "Private api access",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1509528339357,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "70d806c0-e390-5d7d-c982-ccdecddf8e90",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:9002/oauth-resource-server/api/public",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509528288435,
+			"name": "Public api access",
+			"description": "",
+			"collectionId": "974f8678-2e1a-6e20-9a00-f0ed15cb2cf3",
+			"responses": []
+		}
+	]
+}

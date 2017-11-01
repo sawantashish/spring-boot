@@ -25,7 +25,9 @@ public class AuthorizationServer extends AuthorizationServerConfigurerAdapter{
 
     @Bean
     JwtAccessTokenConverter accessTokenConverter(){
-        return new CustomJwtTokenConverter();
+        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        converter.setSigningKey("secret");
+        return converter;
     }
 
     @Autowired
@@ -44,7 +46,7 @@ public class AuthorizationServer extends AuthorizationServerConfigurerAdapter{
                 .authorizedGrantTypes("password","refresh_token")
                 .authorities("ROLE_ADMIN","ROLE_USER")
                 .scopes("read","write")
-                .accessTokenValiditySeconds(180000);
+                .accessTokenValiditySeconds(180);
     }
 
     @Override
